@@ -1,21 +1,22 @@
 object worksheet_JavaEdge{
 
-  def hello(name: String): String = {
-    s"Hello, ${name}"
-  }
+  val l = List("JavaEdge", "Spark", "Scala")
 
-  hello("JavaEdge")
+  for (
+    s <- l //generator 循环遍历 l 中的元素，赋值给 s
+  ) println(s)
 
-  def hello2(name: String)= {
-    s"Hello, ${name}"
-  }
+  for (
+    s <- l
+    if (s.length > 5) //filter 过滤
+  ) println(s)
 
-  hello2("JavaEdge")
-
-  def add(x: Int, y: Int) = x + y
+  val result_for = for {
+    s <- l //generator
+    s1 = s.toUpperCase() //variable binding
+    if (s1 != "")
+  } yield (s1)
   
-  add(1, 2)
-
 }
 
 
